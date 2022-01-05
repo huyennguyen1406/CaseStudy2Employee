@@ -27,8 +27,8 @@ public class EmailRegex extends Exception{
             try {
                 System.out.print("Nhập email: ");
                 String email = EmployeeManager.scanner.next();
-                if(checkEmail(email)==true){
-                    if(checkEmail1(email)==false){
+                if(checkEmail(email) == true){
+                    if(checkEmail1(email) == false){
                         return email;
                     }else throw new InterruptedException();
 

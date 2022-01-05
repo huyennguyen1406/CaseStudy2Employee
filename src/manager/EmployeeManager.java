@@ -10,15 +10,18 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Scanner;
 
-public class EmployeeManager {
-    static Scanner scanner = new Scanner(System.in);
+import static manager.FileManager.docFile;
+import static manager.FileManager.ghiFile;
 
-    static File file1 = new File("./src/CaseStudy/Nv.txt");
-    static ArrayList<Employee> list = docFile();
-    public static void addNhanVien() throws IOException {
-        System.out.println("Thêm Nhân Viên ");
-        System.out.println("1.Nhân Viên Part Time ");
-        System.out.println("2.Nhân Viên Full Time  ");
+public class EmployeeManager {
+    public static Scanner scanner = new Scanner(System.in);
+
+    static File file1 = new File("./src/CaseStudy/Employee.txt");
+    public static ArrayList<Employee> list = docFile();
+    public static void addEmployee() throws IOException {
+        System.out.println("Thêm nhân viên ");
+        System.out.println("1.Nhân viên Parttime ");
+        System.out.println("2.Nhân viên Fulltime  ");
         System.out.println("3.Exit");
         System.out.print("Enter your choice ");
         int x = Integer.parseInt(scanner.nextLine());
@@ -46,55 +49,8 @@ public class EmployeeManager {
         String name = scanner.nextLine();
         return new FullEmployee(IdRegex.getId(), name, AgeRegex.getAge(), GenderRegex.getGender(), PhoneRegex.getPhone(), EmailRegex.getEmail(), StatusRegex.getStatus(), SalaryRegex.getSalary());
     }
-    // ===================================================
-    public static void ghiFile(File file) throws IOException {
-        BufferedWriter bufferedWriter = null;
-        try {
-
-            FileWriter fileWriter = new FileWriter(file, false);
-            bufferedWriter = new BufferedWriter(fileWriter);
-
-            for (Employee pp : list) {
-                bufferedWriter.write(pp.ghi());
-                bufferedWriter.newLine();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            bufferedWriter.close();
-        }
-    }
-
-    //============================================
-    public static ArrayList<Employee> docFile() {
-        ArrayList<Employee> list1 = new ArrayList<>();
-        try {
-            if(!file1.exists()){
-                file1.createNewFile();
-            }
-            FileReader fileReader = new FileReader(file1);
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String line = "";
-            while ((line = bufferedReader.readLine()) != null) {
-                String[] str = line.split(",");
-                if (str.length == 9) {
-                    list1.add(new PartEmployee(Integer.parseInt(str[0]), str[1], Integer.parseInt(str[2]), str[3], str[4], str[5], Boolean.parseBoolean(str[6]), Integer.parseInt(str[7]),Integer.parseInt(str[8])));
-                }else if (str.length == 8) {
-//                    int id,String name, int age, String gender, String phone, String email,boolean status, double salary
-                    list1.add(new FullEmployee(Integer.parseInt(str[0]), str[1], Integer.parseInt(str[2]), str[3], str[4], str[5], Boolean.parseBoolean(str[6]), Integer.parseInt(str[7])));
-                }
-            }
-//            for (NhanVien x : list1) {
-//                System.out.println(x);
-//            }
-            bufferedReader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return list1;
-    }
     //================================================
-    public static void removeNhanVien() throws Exception {
+    public static void removeEmployee() throws Exception {
         System.out.print(" Nhập id bạn muốn xoá  : ");
         int id = Integer.parseInt(scanner.nextLine());
         int index = -1;
@@ -112,7 +68,7 @@ public class EmployeeManager {
     }
 
     //===============================================
-    public static void changeInfor() throws Exception {
+    public static void changeInfo() throws Exception {
         System.out.print("Nhập id bạn muốn sửa : ");
         int id = Integer.parseInt(scanner.nextLine());
         int index=-1;
@@ -138,7 +94,7 @@ public class EmployeeManager {
     }
 
     //===============================================
-    public static void kiemTraInfor() {
+    public static void checkInfo() {
         System.out.println("Nhập id bạn muốn kiểm tra");
         int id = Integer.parseInt(scanner.nextLine());
         int index = -1;
@@ -154,7 +110,7 @@ public class EmployeeManager {
     }
 
     //=====================================================
-    public static void changStatus() throws Exception {
+    public static void changeStatus() throws Exception {
         System.out.println("Nhập id bạn muốn thay đổi");
         int id = Integer.parseInt(scanner.nextLine());
         int index = -1;
@@ -177,7 +133,7 @@ public class EmployeeManager {
         ghiFile(file1);
     }
     //=====================================================
-    public static void showLuong(){
+    public static void showSalary(){
         System.out.print("Nhập id bạn muốn hiển thị lương: ");
         int id = Integer.parseInt(scanner.next());
         int index = -1;
@@ -188,7 +144,7 @@ public class EmployeeManager {
                 System.out.println(list.get(i).totalSalary());
             }
         }
-        if(index==-1){
+        if(index == -1){
             System.out.println("Không tồn tại id này !!!");
         }
     }
@@ -212,18 +168,6 @@ public class EmployeeManager {
             System.out.println(x);
         }
     }
-    public static void show2() {
-        int index = -1;
-        for(int i = 0; i < list.size(); i++){
-            if (list.get(i).toString().contains("PartEmployee")) {
-                index = i;
-                System.out.println(list.get(i).toString());
-            }
-        }
-        if(index == -1){
-            System.out.println("Không có nhân viên PartTime nào !!!");
-        }
-    }
     public static void show1() {
         int index = -1;
         for(int i = 0; i < list.size(); i++){
@@ -234,6 +178,19 @@ public class EmployeeManager {
         }
         if(index == -1){
             System.out.println("Không có nhân viên Full time nào !!!");
+        }
+    }
+
+    public static void show2() {
+        int index = -1;
+        for(int i = 0; i < list.size(); i++){
+            if (list.get(i).toString().contains("PartEmployee")) {
+                index = i;
+                System.out.println(list.get(i).toString());
+            }
+        }
+        if(index == -1){
+            System.out.println("Không có nhân viên PartTime nào !!!");
         }
     }
 }

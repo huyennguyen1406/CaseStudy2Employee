@@ -10,7 +10,7 @@ public class Main {
         menuLogin();
     }
 
-    public void menuLogin() {
+    public static void menuLogin() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("HỆ THỐNG ĐĂNG NHẬP");
@@ -22,7 +22,34 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    int choice = AccountManager.signIn();
+                    int choice1 = AccountManager.signIn();
+                    if (choice1 == 1) {
+                        Main3.main2();
+                        break;
+                    } else if (choice1 == 2) {
+                        Main2.main1();
+                        break;
+                    } else {
+                        System.out.println("Tài khoản hoặc mật khẩu không chính xác!!!");
+                        break;
+                    }
+                case 2:
+                    try {
+                        AccountManager.addAcount();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    break;
+                case 3:
+                    try {
+                        AccountManager.removeAccount();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    break;
+                case 4:
+                    AccountManager.show();
+                    break;
             }
         }
     }

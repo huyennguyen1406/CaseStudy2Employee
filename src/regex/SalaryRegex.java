@@ -7,7 +7,7 @@ public class SalaryRegex extends Exception{
     public static int getSalary(){
         while (true){
             try{
-                System.out.print("Nhập lương của nhân viên : ");
+                System.out.print("Nhập lương của nhân viên: ");
                 return Integer.parseInt(scanner.next());
             }catch (Exception e){
                 System.out.println("Sai định dạng");

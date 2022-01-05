@@ -45,9 +45,7 @@ public class AccountManager {
                     list2.add(new Account(str[0], str[1],str[2]));
                 }
             }
-//            for(Account x:list2){
-//                System.out.println(x);
-//            }
+//
             bufferedReader.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -107,7 +105,7 @@ public class AccountManager {
     }
 
     //=====================================
-    public static void removeAcc() throws Exception {
+    public static void removeAccount() throws Exception {
         System.out.print("Nhập tên tài khoản bạn muốn xoá : ");
         String acc = scanner.nextLine();
         for (int i = 0; i < list1.size(); i++) {
