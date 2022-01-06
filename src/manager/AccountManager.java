@@ -1,12 +1,10 @@
 package manager;
 
 import model.Account;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.io.File;
-import java.io.IOException;
-import java.io.FileOutputStream;
 public class AccountManager {
     static Scanner scanner = new Scanner(System.in);
     static File file2 = new File("src/Account.txt");
@@ -26,6 +24,7 @@ public class AccountManager {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
+            assert bufferedWriter != null;
             bufferedWriter.close();
         }
     }
@@ -39,7 +38,7 @@ public class AccountManager {
 //            }
             FileReader fileReader = new FileReader(file2);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String line = "";
+            String line;
             while ((line = bufferedReader.readLine()) != null) {
                 String[] str = line.split(",");
                 if (str.length >= 3) {

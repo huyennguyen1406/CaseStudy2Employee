@@ -8,13 +8,13 @@ public class Employee {
     private String phone;
     private String email;
     private boolean status;
-    private double salary;
+    private int salary;
     private double totalSalary;
 
     public Employee() {
     }
 
-    public Employee(int id, String name, int age, String gender, String phone, String email, boolean status, double salary) {
+    public Employee(int id, String name, int age, String gender, String phone, String email, boolean status, int salary) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -85,7 +85,7 @@ public class Employee {
         return salary;
     }
 
-    public void setSalary(double salary) {
+    public void setSalary(int salary) {
         this.salary = salary;
     }
 

@@ -30,7 +30,7 @@ public class Main {
                         Main2.main1();
                         break;
                     } else {
-                        System.out.println("Tài khoản hoặc mật khẩu không chính xác!!!");
+                        System.out.println("Tài khoản/mật khẩu không chính xác!!!");
                         break;
                     }
                 case 2:

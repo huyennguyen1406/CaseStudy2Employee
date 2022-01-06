@@ -13,14 +13,14 @@ import java.util.Scanner;
 public class EmployeeManager {
     public static Scanner scanner = new Scanner(System.in);
 
-    static File file1 = new File("./src/CaseStudy/Employee.txt");
+    static File file1 = new File("src/Employee.txt");
     public static ArrayList<Employee> list = docFile();
     public static void addEmployee() throws IOException {
         System.out.println("Thêm nhân viên ");
         System.out.println("1.Nhân viên Parttime ");
         System.out.println("2.Nhân viên Fulltime  ");
         System.out.println("3.Exit");
-        System.out.print("Enter your choice ");
+        System.out.print("Nhập lựa chọn của bạn: ");
         int x = Integer.parseInt(scanner.nextLine());
         switch (x) {
             case 1:
@@ -73,7 +73,7 @@ public class EmployeeManager {
 //            }
             FileReader fileReader = new FileReader(file1);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String line = "";
+            String line;
             while ((line = bufferedReader.readLine()) != null) {
                 String[] str = line.split(",");
                 if (str.length == 9) {
@@ -108,7 +108,7 @@ public class EmployeeManager {
         ghiFile(file1);
     }
 
-    //thây đổi thông tin nhân viên
+    //thay đổi thông tin nhân viên
     public static void changeInfo() throws Exception {
         System.out.print("Nhập id bạn muốn sửa: ");
         int id = Integer.parseInt(scanner.nextLine());
@@ -173,7 +173,7 @@ public class EmployeeManager {
         }
         ghiFile(file1);
     }
-    //=====================================================
+    //show lương
     public static void showSalary(){
         System.out.print("Nhập id bạn muốn hiển thị lương: ");
         int id = Integer.parseInt(scanner.next());
@@ -186,7 +186,7 @@ public class EmployeeManager {
             }
         }
         if(index == -1){
-            System.out.println("Không tồn tại id này !!!");
+            System.out.println("Không tồn tại id này!!!");
         }
     }
     //sắp xếp nhân viên
@@ -198,7 +198,7 @@ public class EmployeeManager {
     public static void findByName(){
         System.out.println("Nhập tên bạn muốn tìm kiếm: ");
         String name = scanner.nextLine();
-        for(Employee tr:list){
+        for(Employee tr : list){
             if( tr.getName().contains(name)){
                 System.out.println(tr);
             }
@@ -206,7 +206,7 @@ public class EmployeeManager {
     }
     //hiển thị nhân viên
     public static void show() {
-        for(Employee x:list){
+        for(Employee x : list){
             System.out.println(x);
         }
     }
@@ -219,7 +219,7 @@ public class EmployeeManager {
             }
         }
         if(index == -1){
-            System.out.println("Không có nhân viên Fulltime nào !!!");
+            System.out.println("Không có nhân viên Fulltime nào!!!");
         }
     }
 
@@ -232,7 +232,7 @@ public class EmployeeManager {
             }
         }
         if(index == -1){
-            System.out.println("Không có nhân viên Parttime nào !!!");
+            System.out.println("Không có nhân viên Parttime nào!!!");
         }
     }
 }
