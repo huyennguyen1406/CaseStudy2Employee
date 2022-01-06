@@ -25,10 +25,10 @@ public class Main {
                     case 1:
                         int choice1 = AccountManager.signIn();
                         if (choice1 == 1) {
-                            Main3.main2();
+                            MainUser.mainUser();
                             break;
                         } else if (choice1 == 2) {
-                            Main2.main1();
+                            MainAdmin.mainAdmin();
                             break;
                         } else {
                             System.out.println("Tài khoản/mật khẩu không chính xác!!!");

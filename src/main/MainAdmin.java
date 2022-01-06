@@ -6,8 +6,8 @@ import regex.ChoiceRegex;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Main2 {
-    public static void main1() {
+public class MainAdmin {
+    public static void mainAdmin() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("QUẢN LÝ NHÂN VIÊN");
@@ -69,10 +69,10 @@ public class Main2 {
                             EmployeeManager.show();
                             break;
                         case 2:
-                            EmployeeManager.show1();
+                            EmployeeManager.showFull();
                             break;
                         case 3:
-                            EmployeeManager.show2();
+                            EmployeeManager.showPart();
                             break;
                     }
                     break;

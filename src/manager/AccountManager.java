@@ -11,17 +11,17 @@ import static regex.AccountRegex.getAccount;
 public class AccountManager {
     static Scanner scanner = new Scanner(System.in);
     static File file2 = new File("src/Account.txt");
-    public static ArrayList<Account> list1 = docFileAcc();
+    public static ArrayList<Account> list1 = readFileAcc();
 
     //ghi file
-    public static void ghiFileAcc(File file) throws IOException {
+    public static void writeFileAcc(File file) throws IOException {
         BufferedWriter bufferedWriter = null;
         try {
             FileWriter fileWriter = new FileWriter(file, false);
             bufferedWriter = new BufferedWriter(fileWriter);
 
             for (Account pp : list1) {
-                bufferedWriter.write(pp.ghi1());
+                bufferedWriter.write(pp.write1());
                 bufferedWriter.newLine();
             }
         } catch (IOException e) {
@@ -33,7 +33,7 @@ public class AccountManager {
     }
 
     //đọc file
-    public static ArrayList<Account> docFileAcc() {
+    public static ArrayList<Account> readFileAcc() {
         ArrayList<Account> list2 = new ArrayList<>();
         try {
 //            if(!file2.exists()){
@@ -62,7 +62,7 @@ public class AccountManager {
         String pass = scanner.nextLine();
         String role = getRole1();
         list1.add(new Account(account, pass,role));
-        ghiFileAcc(file2);
+        writeFileAcc(file2);
     }
     //============================================
     public static String getRole1(){
@@ -96,7 +96,7 @@ public class AccountManager {
                 i--;
             }
         }
-        ghiFileAcc(file2);
+        writeFileAcc(file2);
     }
 
 // đặng nhập

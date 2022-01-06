@@ -14,22 +14,22 @@ public class EmployeeManager {
     public static Scanner scanner = new Scanner(System.in);
 
     static File file1 = new File("src/Employee.txt");
-    public static ArrayList<Employee> list = docFile();
+    public static ArrayList<Employee> list = readFile();
     public static void addEmployee() throws IOException {
         System.out.println("Thêm nhân viên ");
-        System.out.println("1.Nhân viên Parttime ");
-        System.out.println("2.Nhân viên Fulltime  ");
+        System.out.println("1.Nhân viên Fulltime ");
+        System.out.println("2.Nhân viên Parttime  ");
         System.out.println("3.Exit");
         System.out.print("Nhập lựa chọn của bạn: ");
         int x = Integer.parseInt(scanner.nextLine());
         switch (x) {
             case 1:
-                list.add(addPartEmployee());
-                ghiFile(file1);
+                list.add(addFullEmployee());
+                writeFile(file1);
                 break;
             case 2:
-                list.add(addFullEmployee());
-                ghiFile(file1);
+                list.add(addPartEmployee());
+                writeFile(file1);
                 break;
         }
     }
@@ -45,7 +45,7 @@ public class EmployeeManager {
         return new FullEmployee(IdRegex.getId(), name, AgeRegex.getAge(), GenderRegex.getGender(), PhoneRegex.getPhone(), EmailRegex.getEmail(), StatusRegex.getStatus(), SalaryRegex.getSalary());
     }
 
-    public static void ghiFile(File file) throws IOException {
+    public static void writeFile(File file) throws IOException {
         BufferedWriter bufferedWriter = null;
 
         try {
@@ -53,7 +53,7 @@ public class EmployeeManager {
             bufferedWriter = new BufferedWriter(fileWriter);
 
             for (Employee pp : list) {
-                bufferedWriter.write(pp.ghi());
+                bufferedWriter.write(pp.write());
                 bufferedWriter.newLine();
             }
         } catch (IOException e) {
@@ -65,7 +65,7 @@ public class EmployeeManager {
     }
 
     //============================================
-    public static ArrayList<Employee> docFile() {
+    public static ArrayList<Employee> readFile() {
         ArrayList<Employee> list1 = new ArrayList<>();
         try {
 //            if(!file1.exists()){
@@ -105,7 +105,7 @@ public class EmployeeManager {
         if (index == -1) {
             System.out.println("Không tồn tại id này!!!");
         }
-        ghiFile(file1);
+        writeFile(file1);
     }
 
     //thay đổi thông tin nhân viên
@@ -131,7 +131,7 @@ public class EmployeeManager {
         if(index == -1){
             System.out.println("Không tồn tại id này !!!");
         }
-        ghiFile(file1);
+        writeFile(file1);
     }
 
     //kiểm tra thông tin nhân viên
@@ -171,7 +171,7 @@ public class EmployeeManager {
         if (index == -1) {
             System.out.println("Không tồn tại id này!!!");
         }
-        ghiFile(file1);
+        writeFile(file1);
     }
     //show lương
     public static void showSalary(){
@@ -192,8 +192,9 @@ public class EmployeeManager {
     //sắp xếp nhân viên
     public static void sort() throws Exception{
         list.sort(Comparator.comparing(Employee::getId));
-        ghiFile(file1);
+        writeFile(file1);
     }
+
     //tìm nhân viên theo tên
     public static void findByName(){
         System.out.println("Nhập tên bạn muốn tìm kiếm: ");
@@ -204,13 +205,14 @@ public class EmployeeManager {
             }
         }
     }
+
     //hiển thị nhân viên
     public static void show() {
         for(Employee x : list){
             System.out.println(x);
         }
     }
-    public static void show1() {
+    public static void showFull() {
         int index = -1;
         for(int i = 0; i < list.size(); i++){
             if (list.get(i).toString().contains("FullEmployee")) {
@@ -223,7 +225,7 @@ public class EmployeeManager {
         }
     }
 
-    public static void show2() {
+    public static void showPart() {
         int index = -1;
         for(int i = 0; i < list.size(); i++){
             if (list.get(i).toString().contains("PartEmployee")) {

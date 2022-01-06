@@ -38,7 +38,7 @@ public class Account {
         this.role = role;
     }
 
-    public String ghi1(){
+    public String write1(){
         return acc + "," + pass + "," + role;
     }
 

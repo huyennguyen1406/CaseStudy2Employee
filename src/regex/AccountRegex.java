@@ -15,8 +15,8 @@ public class AccountRegex {
                 if(!acc.matches(regex)){
                     throw new IllegalAccessException();
                 }
-                for (Account employee : list1) {
-                    if (employee.getAcc().equals(acc))
+                for (Account account : list1) {
+                    if (account.getAcc().equals(acc))
                         throw new InterruptedException();
                 }
                 return acc;

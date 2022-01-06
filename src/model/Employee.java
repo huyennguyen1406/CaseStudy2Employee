@@ -107,7 +107,7 @@ public class Employee {
                 '}';
     }
 
-    public String ghi(){
+    public String write(){
         return id + "," + name + "," + age + "," + gender + "," + phone+ "," + email + "," + status + "," + salary;
     }
 }

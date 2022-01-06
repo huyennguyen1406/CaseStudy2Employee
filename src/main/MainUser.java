@@ -3,8 +3,8 @@ package main;
 import manager.EmployeeManager;
 import regex.ChoiceRegex;
 
-public class Main3 {
-    public static void main2() {
+public class MainUser {
+    public static void mainUser() {
         while (true) {
             System.out.println("QUẢN LÝ NHÂN VIÊN");
             System.out.println("-----------------");
@@ -38,10 +38,10 @@ public class Main3 {
                             EmployeeManager.show();
                             break;
                         case 2:
-                            EmployeeManager.show1();
+                            EmployeeManager.showFull();
                             break;
                         case 3:
-                            EmployeeManager.show2();
+                            EmployeeManager.showPart();
                             break;
 
                     }
