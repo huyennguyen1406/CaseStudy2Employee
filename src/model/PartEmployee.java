@@ -1,7 +1,5 @@
 package model;
 
-import model.Employee;
-
 public class PartEmployee extends Employee {
     private int timeWorking;
 

@@ -17,7 +17,7 @@ public class Main {
             System.out.println("1. Đăng nhập");
             System.out.println("2. Đăng ký");
             System.out.println("3. Xóa tài khoản");
-            System.out.println("4. Hiển thi tài khoản");
+            System.out.println("4. Hiển thị tài khoản");
             int choice = ChoiceRegex.getChoice();
 
             switch (choice) {
@@ -35,7 +35,7 @@ public class Main {
                     }
                 case 2:
                     try {
-                        AccountManager.addAcount();
+                        AccountManager.addAccount();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

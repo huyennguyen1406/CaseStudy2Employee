@@ -21,7 +21,7 @@ public class IdRegex extends Exception{
             try {
                 System.out.print("Nhập id nhân viên : ");
                 int id = Integer.parseInt(scanner.next());
-                if (checkId(id) == true) {
+                if (checkId(id)) {
                     return id;
                 } else throw new InterruptedException();
             } catch (InterruptedException e) {

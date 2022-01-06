@@ -15,7 +15,6 @@ public class Main3 {
             System.out.println("5. Sắp xếp nhân viên theo ID");
             System.out.println("6. Tìm kiếm nhân viên theo tên");
             System.out.println("7. Đăng xuất");
-            System.out.println("Nhập lựa chọn của bạn: ");
             int choice3 = ChoiceRegex.getChoice();
             switch (choice3) {
                 case 1:

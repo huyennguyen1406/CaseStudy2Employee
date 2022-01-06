@@ -9,10 +9,8 @@ public class EmailRegex extends Exception{
         return "Sai định dạng";
     }
     public static boolean checkEmail(String email){
-        String str1="^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)$";
-        if(email.matches(str1)){
-            return true;
-        }else return false;
+        String str1 = "^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)$";
+        return email.matches(str1);
     }
 
     public static boolean checkEmail1(String email){
@@ -27,8 +25,8 @@ public class EmailRegex extends Exception{
             try {
                 System.out.print("Nhập email: ");
                 String email = EmployeeManager.scanner.next();
-                if(checkEmail(email) == true){
-                    if(checkEmail1(email) == false){
+                if(checkEmail(email)){
+                    if(!checkEmail1(email)){
                         return email;
                     }else throw new InterruptedException();
 
