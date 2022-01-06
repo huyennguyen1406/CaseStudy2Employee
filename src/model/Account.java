@@ -44,7 +44,7 @@ public class Account {
 
     @Override
     public String toString() {
-        return "model.Account{" +
+        return "Account{" +
                 "acc='" + acc + '\'' +
                 ", pass='" + pass + '\'' +
                 ", role='" + role + '\'' +

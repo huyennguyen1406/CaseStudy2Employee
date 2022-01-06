@@ -10,15 +10,18 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Scanner;
 
+import static file.readWriteFile.readFile;
+import static file.readWriteFile.writeFile;
+
 public class EmployeeManager {
     public static Scanner scanner = new Scanner(System.in);
 
-    static File file1 = new File("src/Employee.txt");
+    public static File file1 = new File("src/Employee.txt");
     public static ArrayList<Employee> list = readFile();
     public static void addEmployee() throws IOException {
         System.out.println("Thêm nhân viên ");
         System.out.println("1.Nhân viên Fulltime ");
-        System.out.println("2.Nhân viên Parttime  ");
+        System.out.println("2.Nhân viên Parttime ");
         System.out.println("3.Exit");
         System.out.print("Nhập lựa chọn của bạn: ");
         int x = Integer.parseInt(scanner.nextLine());
@@ -45,51 +48,6 @@ public class EmployeeManager {
         return new FullEmployee(IdRegex.getId(), name, AgeRegex.getAge(), GenderRegex.getGender(), PhoneRegex.getPhone(), EmailRegex.getEmail(), StatusRegex.getStatus(), SalaryRegex.getSalary());
     }
 
-    public static void writeFile(File file) throws IOException {
-        BufferedWriter bufferedWriter = null;
-
-        try {
-            FileWriter fileWriter = new FileWriter(file, false);
-            bufferedWriter = new BufferedWriter(fileWriter);
-
-            for (Employee pp : list) {
-                bufferedWriter.write(pp.write());
-                bufferedWriter.newLine();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            assert bufferedWriter != null;
-            bufferedWriter.close();
-        }
-    }
-
-    //============================================
-    public static ArrayList<Employee> readFile() {
-        ArrayList<Employee> list1 = new ArrayList<>();
-        try {
-//            if(!file1.exists()){
-//                file1.createNewFile();
-//            }
-            FileReader fileReader = new FileReader(file1);
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                String[] str = line.split(",");
-                if (str.length == 9) {
-                    list1.add(new PartEmployee(Integer.parseInt(str[0]), str[1], Integer.parseInt(str[2]), str[3], str[4], str[5], Boolean.parseBoolean(str[6]), Integer.parseInt(str[7]),Integer.parseInt(str[8])));
-                }else if (str.length == 8) {
-//                    int id,String name, int age, String gender, String phone, String email,boolean status, double salary
-                    list1.add(new FullEmployee(Integer.parseInt(str[0]), str[1], Integer.parseInt(str[2]), str[3], str[4], str[5], Boolean.parseBoolean(str[6]), Integer.parseInt(str[7])));
-                }
-            }
-
-            bufferedReader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return list1;
-    }
     //xóa nhân viên
     public static void removeEmployee() throws Exception {
         System.out.print(" Nhập id bạn muốn xoá: ");

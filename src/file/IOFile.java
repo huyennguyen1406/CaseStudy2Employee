@@ -1,8 +1,6 @@
 package file;
 
-import model.Account;
 
-import java.io.*;
 //
 //public class IOFile <E> {
 //    public static void ghiFileAcc(File file) throws IOException {

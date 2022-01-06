@@ -6,54 +6,16 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static file.readWriteFile.readFileAcc;
+import static file.readWriteFile.writeFileAcc;
 import static regex.AccountRegex.getAccount;
 
 public class AccountManager {
     static Scanner scanner = new Scanner(System.in);
-    static File file2 = new File("src/Account.txt");
+    public static File file2 = new File("src/Account.txt");
     public static ArrayList<Account> list1 = readFileAcc();
 
     //ghi file
-    public static void writeFileAcc(File file) throws IOException {
-        BufferedWriter bufferedWriter = null;
-        try {
-            FileWriter fileWriter = new FileWriter(file, false);
-            bufferedWriter = new BufferedWriter(fileWriter);
-
-            for (Account pp : list1) {
-                bufferedWriter.write(pp.write1());
-                bufferedWriter.newLine();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            assert bufferedWriter != null;
-            bufferedWriter.close();
-        }
-    }
-
-    //đọc file
-    public static ArrayList<Account> readFileAcc() {
-        ArrayList<Account> list2 = new ArrayList<>();
-        try {
-//            if(!file2.exists()){
-//                file2.createNewFile();
-//            }
-            FileReader fileReader = new FileReader(file2);
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                String[] str = line.split(",");
-                if (str.length >= 3) {
-                    list2.add(new Account(str[0], str[1],str[2]));
-                }
-            }
-            bufferedReader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return list2;
-    }
 
     // tạo tài khoản
     public static void addAccount() throws Exception {
