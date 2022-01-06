@@ -22,8 +22,4 @@ public class GenderRegex extends Exception{
             }
         }
     }
-
-    public static void main(String[] args) {
-        getGender();
-    }
 }

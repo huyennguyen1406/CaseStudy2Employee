@@ -15,8 +15,6 @@ public class AccountManager {
     public static File file2 = new File("src/Account.txt");
     public static ArrayList<Account> list1 = readFileAcc();
 
-    //ghi file
-
     // tạo tài khoản
     public static void addAccount() throws Exception {
         String account = getAccount();
@@ -44,9 +42,6 @@ public class AccountManager {
             }
         }
     }
-
-    //    ==============================
-
 
     //Xóa tài khoản
     public static void removeAccount() throws Exception {

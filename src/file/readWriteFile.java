@@ -52,7 +52,7 @@ public class readWriteFile extends Exception{
         }
         return list2;
     }
-//ghi file employee
+//đọc file employee
     public static ArrayList<Employee> readFile() {
         ArrayList<Employee> list1 = new ArrayList<>();
         try {
@@ -75,7 +75,7 @@ public class readWriteFile extends Exception{
         }
         return list1;
     }
-
+//ghi file employee
     public static void writeFile(File file) throws IOException {
         BufferedWriter bufferedWriter = null;
 
