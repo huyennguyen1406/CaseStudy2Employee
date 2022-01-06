@@ -19,13 +19,13 @@ public class IdRegex extends Exception{
     public static int getId() {
         while (true) {
             try {
-                System.out.print("Nhập id nhân viên : ");
+                System.out.print("Nhập id nhân viên: ");
                 int id = Integer.parseInt(scanner.next());
                 if (checkId(id)) {
                     return id;
                 } else throw new InterruptedException();
             } catch (InterruptedException e) {
-                System.out.println("Đã tồn tại !!!");
+                System.out.println("Đã tồn tại!!!");
             } catch (Exception e) {
                 System.out.println("Sai định dạng !!!");
             }

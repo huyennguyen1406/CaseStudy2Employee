@@ -5,10 +5,13 @@ import model.Account;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import static regex.AccountRegex.getAccount;
+
 public class AccountManager {
     static Scanner scanner = new Scanner(System.in);
     static File file2 = new File("src/Account.txt");
-    static ArrayList<Account> list1 = docFileAcc();
+    public static ArrayList<Account> list1 = docFileAcc();
 
     //ghi file
     public static void ghiFileAcc(File file) throws IOException {
@@ -45,7 +48,6 @@ public class AccountManager {
                     list2.add(new Account(str[0], str[1],str[2]));
                 }
             }
-//
             bufferedReader.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -58,7 +60,7 @@ public class AccountManager {
         String account = getAccount();
         System.out.println("Nhập mật khẩu: ");
         String pass = scanner.nextLine();
-        String role=getRole1();
+        String role = getRole1();
         list1.add(new Account(account, pass,role));
         ghiFileAcc(file2);
     }
@@ -82,27 +84,7 @@ public class AccountManager {
     }
 
     //    ==============================
-    private static String getAccount() {
-        while (true) {
-            try {
-                String regex = "^[a-zA-z0-9]\\w*";
-                System.out.println("Nhập tên tài khoản: ");
-                String acc = scanner.nextLine();
-                if(!acc.matches(regex)){
-                    throw new IllegalAccessException();
-                }
-                for (Account employee : list1) {
-                    if (employee.getAcc().equals(acc))
-                        throw new InterruptedException();
-                }
-                return acc;
-            } catch (InterruptedException e) {
-                System.out.println("Đã tồn tại ");
-            }catch (IllegalAccessException e){
-                System.out.println("Lỗi !!!");
-            }
-        }
-    }
+
 
     //Xóa tài khoản
     public static void removeAccount() throws Exception {
@@ -116,8 +98,8 @@ public class AccountManager {
         }
         ghiFileAcc(file2);
     }
-// đặng nhập
 
+// đặng nhập
     public static int signIn() {
         System.out.print("Nhập tài khoản: ");
         String acc = scanner.nextLine();
