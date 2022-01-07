@@ -95,7 +95,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "model.Employee{" +
+        return "Employee{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +

@@ -16,7 +16,7 @@ import static file.readWriteFile.writeFile;
 public class EmployeeManager {
     public static Scanner scanner = new Scanner(System.in);
 
-    public static File file1 = new File("src/Employee.txt");
+    public static File file1 = new File("src/file/Employee.txt");
     public static ArrayList<Employee> list = readFile();
     public static void addEmployee() throws IOException {
         System.out.println("Thêm nhân viên ");
@@ -50,7 +50,7 @@ public class EmployeeManager {
 
     //xóa nhân viên
     public static void removeEmployee() throws Exception {
-        System.out.print(" Nhập id bạn muốn xoá: ");
+        System.out.print("Nhập id bạn muốn xoá: ");
         int id = Integer.parseInt(scanner.nextLine());
         int index = -1;
         for (int i = 0; i < list.size(); i++) {
@@ -110,18 +110,18 @@ public class EmployeeManager {
 
     //thay đổi trạng thái
     public static void changeStatus() throws Exception {
-        System.out.println("Nhập id bạn muốn thay đổi");
+        System.out.println("Nhập id bạn muốn thay đổi: ");
         int id = Integer.parseInt(scanner.nextLine());
         int index = -1;
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).getId() == id) {
                 index = i;
                 if (StatusRegex.getStatus()) {
-                    list.get(i).setStatus(false);
-                    System.out.println("Nhân viên có id " + id + "đang nghỉ.");
-                } else {
                     list.get(i).setStatus(true);
-                    System.out.println("Nhân viên có id" + id + " đang làm việc.");
+                    System.out.println("Nhân viên có id " + id + " đang làm việc.");
+                } else {
+                    list.get(i).setStatus(false);
+                    System.out.println("Nhân viên có id " + id + " đang nghỉ.");
                 }
                 System.out.println("Đã thay đổi thành công !!!");
             }

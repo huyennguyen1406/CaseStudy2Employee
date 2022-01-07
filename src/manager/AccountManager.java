@@ -12,7 +12,7 @@ import static regex.AccountRegex.getAccount;
 
 public class AccountManager {
     static Scanner scanner = new Scanner(System.in);
-    public static File file2 = new File("src/Account.txt");
+    public static File file2 = new File("src/file/Account.txt");
     public static ArrayList<Account> list1 = readFileAcc();
 
     // tạo tài khoản
