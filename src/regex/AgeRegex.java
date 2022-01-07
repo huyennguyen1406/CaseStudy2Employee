@@ -14,9 +14,9 @@ public class AgeRegex extends Exception{
                 else
                     return age;
             } catch (AgeRegex e) {
-                System.out.println("Nhỏ hơn 18 tuổi !!!");
+                System.out.println("Nhỏ hơn 18 tuổi!!!");
             }catch (Exception e){
-                System.out.println("Sai định dạng !!!");
+                System.out.println("Sai định dạng!!!");
             }
         }
     }

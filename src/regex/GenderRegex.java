@@ -4,14 +4,11 @@ import java.util.Scanner;
 
 public class GenderRegex extends Exception{
     static Scanner scanner = new Scanner(System.in);
-    @Override
-    public String getMessage() {
-        return "Sai rồi !!!";
-    }
+
     public static String getGender() {
         while (true) {
             try {
-                System.out.print("Nhập giới tính : ");
+                System.out.print("Nhập giới tính: ");
                 String gender = scanner.nextLine();
                 if (gender.equals("Male") || gender.equals("Female")) {
                     return gender;
@@ -21,5 +18,9 @@ public class GenderRegex extends Exception{
                 System.out.println(e.getMessage());
             }
         }
+    }
+    @Override
+    public String getMessage() {
+        return "Sai rồi!!!";
     }
 }

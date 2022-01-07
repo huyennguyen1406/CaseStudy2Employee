@@ -21,9 +21,9 @@ public class AccountRegex {
                 }
                 return acc;
             } catch (InterruptedException e) {
-                System.out.println("Đã tồn tại ");
+                System.out.println("Đã tồn tại!!!");
             }catch (IllegalAccessException e){
-                System.out.println("Lỗi !!!");
+                System.out.println("Lỗi!!!");
             }
         }
     }

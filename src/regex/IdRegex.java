@@ -27,7 +27,7 @@ public class IdRegex extends Exception{
             } catch (InterruptedException e) {
                 System.out.println("Đã tồn tại!!!");
             } catch (Exception e) {
-                System.out.println("Sai định dạng !!!");
+                System.out.println("Sai định dạng!!!");
             }
         }
     }

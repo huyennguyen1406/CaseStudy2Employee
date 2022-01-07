@@ -4,10 +4,7 @@ import manager.EmployeeManager;
 import model.Employee;
 
 public class EmailRegex extends Exception{
-    @Override
-    public String getMessage(){
-        return "Sai định dạng";
-    }
+
     public static boolean checkEmail(String email){
         String str1 = "^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)$";
         return email.matches(str1);
@@ -40,5 +37,9 @@ public class EmailRegex extends Exception{
                 System.out.println("Đã tồn tại !!!");
             }
         }
+    }
+    @Override
+    public String getMessage(){
+        return "Sai định dạng";
     }
 }

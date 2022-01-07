@@ -9,7 +9,7 @@ public class StatusRegex extends Exception{
             try {
                 System.out.println("Nhập trạng thái");
                 System.out.println("1.Đang làm việc");
-                System.out.println("2.Đang nghỉ ");
+                System.out.println("2.Đang nghỉ");
                 System.out.print("Nhập lựa chọn của bạn: ");
                 int x=Integer.parseInt(scanner.nextLine());
                 if (x == 1) {
