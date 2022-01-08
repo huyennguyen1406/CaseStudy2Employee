@@ -21,8 +21,8 @@ public class MainUser {
 
                 case 2:
                     System.out.println("1. Hiển thị danh sách nhân viên");
-                    System.out.println("1. Hiển thị danh sách nhân viên Fulltime");
-                    System.out.println("1. Hiển thị danh sách nhân viên Parttime");
+                    System.out.println("2. Hiển thị danh sách nhân viên Fulltime");
+                    System.out.println("3. Hiển thị danh sách nhân viên Parttime");
                     int choice4 = ChoiceRegex.getChoice();
                     switch (choice4) {
                         case 1:

@@ -23,4 +23,8 @@ public class PartEmployee extends Employee {
     public double totalSalary() {
         return this.getSalary() * this.timeWorking;
     }
+    @Override
+    public String toString() {
+        return "PartEmployee{" + super.toString()+ '}';
+    }
 }
