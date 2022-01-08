@@ -1,8 +1,7 @@
 package model;
 
-import model.Employee;
-
 public class FullEmployee extends Employee {
+
     public FullEmployee() {
     }
 
