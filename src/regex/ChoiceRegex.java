@@ -10,7 +10,7 @@ public class ChoiceRegex extends Exception{
                 System.out.print("Nhập lựa chọn của bạn: ");
                 return Integer.parseInt(scanner.next());
             }catch (Exception e){
-                System.out.println("Sai định dạng");
+                System.out.println("Sai định dạng!!!");
             }
         }
     }

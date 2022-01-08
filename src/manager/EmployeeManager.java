@@ -74,7 +74,7 @@ public class EmployeeManager {
         System.out.println("Nhập thông tin bạn muốn sửa: ");
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).getId() == id) {
-                index=i;
+                index = i;
                 if (list.get(i) instanceof PartEmployee) {
                     list.remove(i);
                     list.add(i, addPartEmployee());
@@ -157,17 +157,17 @@ public class EmployeeManager {
     public static void findByName(){
         System.out.println("Nhập tên bạn muốn tìm kiếm: ");
         String name = scanner.nextLine();
-        for(Employee tr : list){
-            if( tr.getName().contains(name)){
-                System.out.println(tr);
+        for(Employee employee : list){
+            if( employee.getName().contains(name)){
+                System.out.println(employee);
             }
         }
     }
 
     //hiển thị nhân viên
     public static void show() {
-        for(Employee x : list){
-            System.out.println(x);
+        for(Employee employee : list){
+            System.out.println(employee);
         }
     }
     public static void showFull() {

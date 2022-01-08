@@ -34,12 +34,12 @@ public class EmailRegex extends Exception{
                 System.out.println(e.getMessage());
             }
             catch (InterruptedException e){
-                System.out.println("Đã tồn tại !!!");
+                System.out.println("Đã tồn tại!!!");
             }
         }
     }
     @Override
     public String getMessage(){
-        return "Sai định dạng";
+        return "Sai định dạng!!!";
     }
 }

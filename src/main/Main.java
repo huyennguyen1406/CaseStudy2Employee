@@ -55,7 +55,7 @@ public class Main {
                         System.out.println("Thử lại!!!");
                 }
             } catch (Exception e) {
-                System.out.println("Nhập lỗi");
+                System.out.println("Nhập lỗi!!!");
             }
         }
         while (true);

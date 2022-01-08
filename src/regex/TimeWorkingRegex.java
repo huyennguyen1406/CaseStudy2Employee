@@ -7,10 +7,10 @@ public class TimeWorkingRegex extends Exception{
     public static int getTimeWorking() {
         while (true) {
             try {
-                System.out.print("Nhập số giờ làm việc : ");
+                System.out.print("Nhập số giờ làm việc: ");
                 return Integer.parseInt(scanner.next());
             } catch (Exception e) {
-                System.out.println("Sai định dạng");
+                System.out.println("Sai định dạng!!!");
             }
         }
     }

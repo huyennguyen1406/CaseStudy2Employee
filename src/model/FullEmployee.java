@@ -17,6 +17,6 @@ public class FullEmployee extends Employee {
 
     @Override
     public String toString() {
-        return "model.FullEmployee{" + super.toString()+ '}';
+        return "FullEmployee{" + super.toString()+ '}';
     }
 }
