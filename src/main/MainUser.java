@@ -16,25 +16,20 @@ public class MainUser {
             int choice3 = ChoiceRegex.getChoice();
             switch (choice3) {
                 case 1:
-                    EmployeeManager.checkInfo();
+                    try {
+                        EmployeeManager.checkInfo();
+                        break;
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     break;
 
                 case 2:
-                    System.out.println("1. Hiển thị danh sách nhân viên");
-                    System.out.println("2. Hiển thị danh sách nhân viên Fulltime");
-                    System.out.println("3. Hiển thị danh sách nhân viên Parttime");
-                    int choice4 = ChoiceRegex.getChoice();
-                    switch (choice4) {
-                        case 1:
-                            EmployeeManager.show();
-                            break;
-                        case 2:
-                            EmployeeManager.showFull();
-                            break;
-                        case 3:
-                            EmployeeManager.showPart();
-                            break;
-
+                    try {
+                        System.out.println("1. Hiển thị danh sách nhân viên");
+                        EmployeeManager.show();
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
                     break;
 
@@ -43,16 +38,20 @@ public class MainUser {
                         EmployeeManager.sort();
                     } catch (Exception e) {
                         e.printStackTrace();
-                    } break;
+                    }
+                    break;
 
                 case 4:
-                    EmployeeManager.findByName();
+                    try {
+                        EmployeeManager.findByName();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     break;
 
                 case 5:
                     Main.menuLogin();
                     break;
-
             }
         }
     }

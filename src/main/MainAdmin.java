@@ -49,7 +49,11 @@ public class MainAdmin {
                     } break;
 
                 case 4:
-                    EmployeeManager.checkInfo();
+                    try {
+                        EmployeeManager.checkInfo();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     break;
 
                 case 5:
@@ -60,24 +64,33 @@ public class MainAdmin {
                     } break;
 
                 case 6:
-                    System.out.println("1. Hiển thị danh sách nhân viên");
-                    System.out.println("2. Hiển thị danh sách nhân viên Fulltime");
-                    System.out.println("3. Hiển thị danh sách nhân viên Parttime");
-                    int choice2 = ChoiceRegex.getChoice();
-                    switch (choice2){
-                        case 1:
-                            EmployeeManager.show();
-                            break;
-                        case 2:
-                            EmployeeManager.showFull();
-                            break;
-                        case 3:
-                            EmployeeManager.showPart();
-                            break;
+                    try {
+                        System.out.println("1. Hiển thị danh sách nhân viên");
+                        System.out.println("2. Hiển thị danh sách nhân viên Fulltime");
+                        System.out.println("3. Hiển thị danh sách nhân viên Parttime");
+                        int choice2 = ChoiceRegex.getChoice();
+                        switch (choice2) {
+                            case 1:
+                                EmployeeManager.show();
+                                break;
+                            case 2:
+                                EmployeeManager.showFull();
+                                break;
+                            case 3:
+                                EmployeeManager.showPart();
+                                break;
+                        }
+                    }catch (Exception e) {
+                        e.printStackTrace();
                     }
                     break;
+
                 case 7:
-                    EmployeeManager.showSalary();
+                    try {
+                        EmployeeManager.showSalary();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     break;
 
                 case 8:
@@ -87,11 +100,21 @@ public class MainAdmin {
                         e.printStackTrace();
                     }
                     break;
+
                 case 9:
-                    EmployeeManager.findByName();
+                    try {
+                        EmployeeManager.findByName();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     break;
+
                 case 10:
-                    Main.menuLogin();
+                    try {
+                        Main.menuLogin();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     break;
             }
         }

@@ -31,9 +31,10 @@ public class Main {
                             MainAdmin.mainAdmin();
                             break;
                         } else {
-                            System.out.println("Tài khoản/mật khẩu không chính xác!!!");
+                            System.out.println("Tài khoản/Mật khẩu không chính xác!!!");
                             break;
                         }
+
                     case 2:
                         try {
                             AccountManager.addAccount();
@@ -41,6 +42,7 @@ public class Main {
                             e.printStackTrace();
                         }
                         break;
+
                     case 3:
                         try {
                             AccountManager.removeAccount();
@@ -48,6 +50,7 @@ public class Main {
                             e.printStackTrace();
                         }
                         break;
+
                     case 4:
                         AccountManager.show();
                         break;
