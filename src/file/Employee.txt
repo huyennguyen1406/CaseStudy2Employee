@@ -1,3 +1,4 @@
-1,Ha,24,Female,0389487443,ha@gmail.com,false,1000
+1,Ha,24,Female,0389487443,ha@gmail.com,true,1000
 2,Phuong,20,Female,0921346578,phuong@gmail.com,true,1200
 3,Truong,23,Male,0987653412,truong@gmail.com,true,800
+4,Hanh,19,Female,0987654132,hanh@gmail.com,true,700

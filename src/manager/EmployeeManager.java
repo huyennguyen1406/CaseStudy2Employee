@@ -38,19 +38,19 @@ public class EmployeeManager {
     }
     //thêm nhân viên
     public static Employee addPartEmployee() {
-        System.out.print("Nhập tên: ");
+        System.out.print("Nhập tên nhân viên Parttime: ");
         String name = scanner.nextLine();
         return new PartEmployee(IdRegex.getId(), name, AgeRegex.getAge(), GenderRegex.getGender(), PhoneRegex.getPhone(), EmailRegex.getEmail(), StatusRegex.getStatus(), SalaryRegex.getSalary(), TimeWorkingRegex.getTimeWorking());
     }
     public static Employee addFullEmployee() {
-        System.out.print("Nhập tên: ");
+        System.out.print("Nhập tên nhân viên Fulltime: ");
         String name = scanner.nextLine();
         return new FullEmployee(IdRegex.getId(), name, AgeRegex.getAge(), GenderRegex.getGender(), PhoneRegex.getPhone(), EmailRegex.getEmail(), StatusRegex.getStatus(), SalaryRegex.getSalary());
     }
 
     //xóa nhân viên
     public static void removeEmployee() throws Exception {
-        System.out.print("Nhập id bạn muốn xoá: ");
+        System.out.print("Nhập ID bạn muốn xoá: ");
         int id = Integer.parseInt(scanner.nextLine());
         int index = -1;
         for (int i = 0; i < list.size(); i++) {
