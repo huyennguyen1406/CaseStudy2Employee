@@ -98,11 +98,11 @@ public class Employee {
         return "Employee{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", age=" + age +
+                ", age=" + age + '\'' +
                 ", gender='" + gender + '\'' +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
-                ", status=" + status +
+                ", status=" + status + '\'' +
                 ", salary=" + salary +
                 '}';
     }

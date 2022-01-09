@@ -25,6 +25,7 @@ public class PhoneRegex extends Exception{
             }
         }
     }
+
     public static boolean checkPhone(String phone) {
         String str1 = "0[3-9]\\d{8}";
         return phone.matches(str1);
