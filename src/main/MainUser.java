@@ -35,7 +35,7 @@ public class MainUser {
 
                 case 3:
                     try {
-                        EmployeeManager.sort();
+                        EmployeeManager.sortAge();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

@@ -7,6 +7,7 @@ import regex.*;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 
 import static file.readWriteFile.readFile;
@@ -147,13 +148,11 @@ public class EmployeeManager {
         }
     }
     //sắp xếp nhân viên
-//    public static void sort() throws Exception{
-//        list.sort(Comparator.comparing(Employee::getId));
-//        writeFile(file1);
-//    }
-    public static void sort() throws Exception {
-        list.sort((o1, o2) -> Integer.compare(o1.getId(), o2.getId()));
-        return;
+    public static void sortAge() {
+        list.sort(Comparator.comparingInt(Employee::getAge));
+        for (Employee employee : list) {
+            System.out.println(employee);
+        }
     }
 
     //tìm nhân viên theo tên

@@ -19,7 +19,7 @@ public class MainAdmin {
             System.out.println("5. Thay đổi trạng thái nhân viên theo ID");
             System.out.println("6. Hiển thị danh sách nhân viên");
             System.out.println("7. Hiển thị lương theo ID");
-            System.out.println("8. Sắp xếp nhân viên theo ID");
+            System.out.println("8. Sắp xếp nhân viên theo tuổi");
             System.out.println("9. Tìm kiếm nhân viên theo tên");
             System.out.println("10. Đăng xuất");
 
@@ -95,7 +95,7 @@ public class MainAdmin {
 
                 case 8:
                     try {
-                        EmployeeManager.sort();
+                        EmployeeManager.sortAge();
                     }catch (Exception e) {
                         e.printStackTrace();
                     }
