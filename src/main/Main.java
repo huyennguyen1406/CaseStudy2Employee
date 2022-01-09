@@ -3,15 +3,12 @@ package main;
 import manager.AccountManager;
 import regex.ChoiceRegex;
 
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         menuLogin();
     }
 
     public static void menuLogin() {
-        Scanner scanner = new Scanner(System.in);
 
         do {
             System.out.println("HỆ THỐNG ĐĂNG NHẬP");

@@ -4,11 +4,9 @@ import manager.EmployeeManager;
 import regex.ChoiceRegex;
 
 import java.io.IOException;
-import java.util.Scanner;
 
 public class MainAdmin {
     public static void mainAdmin() {
-        Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("QUẢN LÝ NHÂN VIÊN");
             System.out.println("-----------------");
