@@ -3,9 +3,6 @@ package model;
 public class PartEmployee extends Employee {
     private int timeWorking;
 
-    public PartEmployee() {
-    }
-
     public PartEmployee(int id, String name, int age, String gender, String phone, String email, boolean status, int salary, int timeWorking) {
         super(id, name, age, gender, phone, email, status, salary);
         this.timeWorking = timeWorking;

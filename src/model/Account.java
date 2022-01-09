@@ -18,24 +18,12 @@ public class Account {
         return acc;
     }
 
-    public void setAcc(String acc) {
-        this.acc = acc;
-    }
-
     public String getPass() {
         return pass;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
-
     public String getRole() {
         return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
     }
 
     public String write1(){
