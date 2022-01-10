@@ -83,8 +83,8 @@ public class readWriteFile extends Exception{
             FileWriter fileWriter = new FileWriter(file, false);
             bufferedWriter = new BufferedWriter(fileWriter);
 
-            for (Employee pp : list) {
-                bufferedWriter.write(pp.write());
+            for (Employee employee : list) {
+                bufferedWriter.write(employee.write());
                 bufferedWriter.newLine();
             }
         } catch (IOException e) {
